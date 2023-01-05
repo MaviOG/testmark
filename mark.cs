@@ -16,10 +16,7 @@ PreberiIzDatoteke(pot_do_datoteke, IzpitArray);
 IzracunajStatistiko(statistika, IzpitArray);
 UrediPoOceni(ref IzpitArray);
 ShraniVDatoteko(pot_do_izhodne_datoteke, IzpitArray, statistika);
-Zapis();
-void Zapis(){
-Console.writeline("mark");
-}
+
 void ShraniVDatoteko(string pot_do_izhodne_datoteke, Izpit[] IzpitArray, int[] statistika)
 {
     // Create a file to write to.
