@@ -17,7 +17,7 @@ IzracunajStatistiko(statistika, IzpitArray);
 UrediPoOceni(ref IzpitArray);
 ShraniVDatoteko(pot_do_izhodne_datoteke, IzpitArray, statistika);
 //markmark
-//vid kaj
+//vid kajk
 
 void ShraniVDatoteko(string pot_do_izhodne_datoteke, Izpit[] IzpitArray, int[] statistika)
 {
