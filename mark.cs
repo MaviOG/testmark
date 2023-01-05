@@ -6,16 +6,20 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
 
 
-int številoŠtudentov = 7;
+int Å¡teviloÅ tudentov = 7;
 int max_ocena = 25;
-Izpit[] IzpitArray = new Izpit[številoŠtudentov];
-int[] statistika = new int[številoŠtudentov];
+Izpit[] IzpitArray = new Izpit[Å¡teviloÅ tudentov];
+int[] statistika = new int[Å¡teviloÅ tudentov];
 string pot_do_datoteke = "vhod8.txt";
 string pot_do_izhodne_datoteke = "izhod8.txt";
 PreberiIzDatoteke(pot_do_datoteke, IzpitArray);
 IzracunajStatistiko(statistika, IzpitArray);
 UrediPoOceni(ref IzpitArray);
 ShraniVDatoteko(pot_do_izhodne_datoteke, IzpitArray, statistika);
+Zapis();
+void Zapis(){
+Console.writeline("mark");
+}
 void ShraniVDatoteko(string pot_do_izhodne_datoteke, Izpit[] IzpitArray, int[] statistika)
 {
     // Create a file to write to.
@@ -25,10 +29,10 @@ void ShraniVDatoteko(string pot_do_izhodne_datoteke, Izpit[] IzpitArray, int[] s
 
         sw.WriteLine("Najvisja ocena :" + statistika[statistika.Length - 1]);
         sw.WriteLine("Najnizja ocena :" + statistika[0]);
-        sw.WriteLine("Povpreèna ocena :" + povprecje(statistika));
-        sw.WriteLine("Število pozitivnih :" + pozitivni(statistika));
-        sw.WriteLine("Število negativnih :" + negativni(statistika));
-        for (int i = številoŠtudentov - 1; i >= 0; i--)
+        sw.WriteLine("PovpreÃ¨na ocena :" + povprecje(statistika));
+        sw.WriteLine("Å tevilo pozitivnih :" + pozitivni(statistika));
+        sw.WriteLine("Å tevilo negativnih :" + negativni(statistika));
+        for (int i = Å¡teviloÅ tudentov - 1; i >= 0; i--)
         {
             sw.WriteLine(IzpisArray(i));
         }
@@ -94,7 +98,7 @@ void UrediPoOceni(ref Izpit[] IzpitArray)
 };
 void IzracunajStatistiko(int[] statistika, Izpit[] IzpitArray)
 {
-    for (int i = 0; i < številoŠtudentov; i++)
+    for (int i = 0; i < Å¡teviloÅ tudentov; i++)
     {
         statistika[i] = IzpitArray[i].ocena;
     }
@@ -104,7 +108,7 @@ void IzracunajStatistiko(int[] statistika, Izpit[] IzpitArray)
 static void PreberiIzDatoteke(string pot_do_datoteke, Izpit[] IzpitArray)
 {
 
-    int številoDvopièji = 1;
+    int Å¡teviloDvopiÃ¨ji = 1;
     string podatek = "";
     int stevilkaArraya = 0;
     using (StreamReader sr = File.OpenText(pot_do_datoteke))
@@ -121,7 +125,7 @@ static void PreberiIzDatoteke(string pot_do_datoteke, Izpit[] IzpitArray)
                 {
                     i++;
 
-                    if (številoDvopièji == 1)
+                    if (Å¡teviloDvopiÃ¨ji == 1)
                     {
                         IzpitArray[stevilkaArraya] = new Izpit();
 
@@ -129,20 +133,20 @@ static void PreberiIzDatoteke(string pot_do_datoteke, Izpit[] IzpitArray)
 
 
                     }
-                    if (številoDvopièji == 2)
+                    if (Å¡teviloDvopiÃ¨ji == 2)
                     {
                         IzpitArray[stevilkaArraya].ocena = Convert.ToInt32(podatek);
 
 
                     }
-                    if (številoDvopièji == 3)
+                    if (Å¡teviloDvopiÃ¨ji == 3)
                     {
                         IzpitArray[stevilkaArraya].max_ocena = Convert.ToInt32(podatek);
 
 
                     }
 
-                    številoDvopièji++;
+                    Å¡teviloDvopiÃ¨ji++;
                     podatek = "";
                 }
 
@@ -152,7 +156,7 @@ static void PreberiIzDatoteke(string pot_do_datoteke, Izpit[] IzpitArray)
                     IzpitArray[stevilkaArraya].tipocene = tip.kolokvij;
 
                     stevilkaArraya++;
-                    številoDvopièji = 1;
+                    Å¡teviloDvopiÃ¨ji = 1;
                     podatek = "";
                 }
                 else if (podatek == "izpit")
@@ -160,7 +164,7 @@ static void PreberiIzDatoteke(string pot_do_datoteke, Izpit[] IzpitArray)
                     IzpitArray[stevilkaArraya].tipocene = tip.izpit;
 
                     stevilkaArraya++;
-                    številoDvopièji = 1;
+                    Å¡teviloDvopiÃ¨ji = 1;
                     podatek = "";
                 }
 
